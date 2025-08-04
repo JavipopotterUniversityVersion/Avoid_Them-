@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y6t84q577x4o"
+path="res://.godot/imported/Cartoon Scramble A.wav-ce27664ca53bfa89322690ba0a7e4bc0.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Cartoon/Cartoon Scramble A.wav"
+dest_files=["res://.godot/imported/Cartoon Scramble A.wav-ce27664ca53bfa89322690ba0a7e4bc0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

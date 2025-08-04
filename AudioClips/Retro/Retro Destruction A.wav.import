@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs52nxplqsntv"
+path="res://.godot/imported/Retro Destruction A.wav-e8d671275449cac9a13667eebeccae01.sample"
+
+[deps]
+
+source_file="res://AudioClips/Retro/Retro Destruction A.wav"
+dest_files=["res://.godot/imported/Retro Destruction A.wav-e8d671275449cac9a13667eebeccae01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

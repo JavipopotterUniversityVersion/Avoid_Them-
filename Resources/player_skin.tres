@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkinDataReference" load_steps=3 format=3 uid="uid://bhcd45q5nq7h6"]
+
+[ext_resource type="Script" path="res://Resources/skin_data_reference.gd" id="1_vcpjh"]
+[ext_resource type="Resource" uid="uid://b5pfkeundejkl" path="res://Resources/default_skin.tres" id="2_ksrp2"]
+
+[resource]
+script = ExtResource("1_vcpjh")
+value = ExtResource("2_ksrp2")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n337o6a7i475"
+path="res://.godot/imported/Chiptune Vol4 Vanquish Main.wav-6c07fda8e6dd2c59117c3debb1f003f0.sample"
+
+[deps]
+
+source_file="res://AudioClips/Chiptune/Vanquish (RT 1.579)/Chiptune Vol4 Vanquish Main.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Vanquish Main.wav-6c07fda8e6dd2c59117c3debb1f003f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

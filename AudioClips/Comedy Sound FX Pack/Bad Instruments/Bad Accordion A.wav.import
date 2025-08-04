@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hnbs530lysuc"
+path="res://.godot/imported/Bad Accordion A.wav-17aa403d14758ffa364588b23ffde782.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Bad Accordion A.wav"
+dest_files=["res://.godot/imported/Bad Accordion A.wav-17aa403d14758ffa364588b23ffde782.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

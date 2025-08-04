@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhwurfv1mi385"
+path="res://.godot/imported/Comedy Squeek B.wav-0398a6535eac27da6755a471f0829855.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Comedy/Comedy Squeek B.wav"
+dest_files=["res://.godot/imported/Comedy Squeek B.wav-0398a6535eac27da6755a471f0829855.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

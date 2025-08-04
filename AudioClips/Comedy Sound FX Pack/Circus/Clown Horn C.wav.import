@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fr1hm71ifyu5"
+path="res://.godot/imported/Clown Horn C.wav-cb1e94a7367d8db9ab6cece03a1366d0.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Circus/Clown Horn C.wav"
+dest_files=["res://.godot/imported/Clown Horn C.wav-cb1e94a7367d8db9ab6cece03a1366d0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

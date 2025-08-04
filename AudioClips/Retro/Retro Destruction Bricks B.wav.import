@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3syh06fvr72b"
+path="res://.godot/imported/Retro Destruction Bricks B.wav-692d0a1adeb8fdf075b1d3266f02166c.sample"
+
+[deps]
+
+source_file="res://AudioClips/Retro/Retro Destruction Bricks B.wav"
+dest_files=["res://.godot/imported/Retro Destruction Bricks B.wav-692d0a1adeb8fdf075b1d3266f02166c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

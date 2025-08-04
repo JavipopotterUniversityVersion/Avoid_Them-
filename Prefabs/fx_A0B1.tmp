@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://k7na2oafvwny"]
+
+[ext_resource type="Script" path="res://Scripts/fx_pooler.gd" id="1_qld84"]
+[ext_resource type="PackedScene" uid="uid://baem7noll13nf" path="res://Prefabs/blood_fx.tscn" id="2_ayndt"]
+
+[node name="fxPooler" type="Node"]
+script = ExtResource("1_qld84")
+_pools = Array[PackedScene]([ExtResource("2_ayndt")])

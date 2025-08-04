@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bx7sy2fhabfqt"
+path="res://.godot/imported/Froggish D.wav-750cb58629f617e592c0b4d2b2eacd13.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Toy/Froggish D.wav"
+dest_files=["res://.godot/imported/Froggish D.wav-750cb58629f617e592c0b4d2b2eacd13.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

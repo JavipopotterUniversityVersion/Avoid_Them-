@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5xhxmxcrgp0r"
+path="res://.godot/imported/Who Ever Smelt It.wav-fa23f12c4f74544e63280df8582c7dcd.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Circus/Who Ever Smelt It.wav"
+dest_files=["res://.godot/imported/Who Ever Smelt It.wav-fa23f12c4f74544e63280df8582c7dcd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

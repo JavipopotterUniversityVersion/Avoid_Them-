@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mf7m01tscs8i"
+path="res://.godot/imported/Trombone Expression B.wav-52bacd6c0ad6d99922d87ea04c923a73.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Trombone Expression B.wav"
+dest_files=["res://.godot/imported/Trombone Expression B.wav-52bacd6c0ad6d99922d87ea04c923a73.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

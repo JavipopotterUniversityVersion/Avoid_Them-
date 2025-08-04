@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ytsnvett1xc7"
+path="res://.godot/imported/Melodica A.wav-0ee51e4a03673af3823d840ac82fd866.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Melodica A.wav"
+dest_files=["res://.godot/imported/Melodica A.wav-0ee51e4a03673af3823d840ac82fd866.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

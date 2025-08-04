@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgbdxftloeybw"
+path="res://.godot/imported/Comedy Pop B.wav-5b4d324476bc6b55cafceb18c3ae3e09.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Comedy/Comedy Pop B.wav"
+dest_files=["res://.godot/imported/Comedy Pop B.wav-5b4d324476bc6b55cafceb18c3ae3e09.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

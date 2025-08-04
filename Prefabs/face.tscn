@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddmmdmqv7vbng"]
+
+[ext_resource type="Script" path="res://Scripts/face.gd" id="1_re4os"]
+[ext_resource type="Shader" path="res://Shaders/wobbly_line.gdshader" id="2_ro7x4"]
+[ext_resource type="Texture2D" uid="uid://rhn2rxadpmlq" path="res://Sprites/Head.png" id="2_uno8f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_es8vj"]
+radius = 70.1142
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bo4x8"]
+shader = ExtResource("2_ro7x4")
+shader_parameter/shaking = true
+shader_parameter/amplitude = 1.0
+shader_parameter/noise_scale = 20.0
+shader_parameter/noise_speed = 20.0
+
+[sub_resource type="Curve" id="Curve_aorvn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_afetd"]
+curve = SubResource("Curve_aorvn")
+
+[sub_resource type="Curve" id="Curve_q6tod"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_trfct"]
+curve = SubResource("Curve_q6tod")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v3w5s"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_max = 380.28
+gravity = Vector3(0, 300, 0)
+scale_min = 15.0
+scale_max = 20.0
+scale_curve = SubResource("CurveTexture_trfct")
+color = Color(1, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_afetd")
+
+[node name="Face" type="RigidBody2D" groups=["Face"]]
+gravity_scale = 0.0
+
+[node name="Area" type="Area2D" parent="."]
+script = ExtResource("1_re4os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+shape = SubResource("CircleShape2D_es8vj")
+debug_color = Color(0.955768, 0, 0.541478, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area"]
+material = SubResource("ShaderMaterial_bo4x8")
+texture = ExtResource("2_uno8f")
+region_rect = Rect2(5, 15, 92, 81)
+
+[node name="Particles" type="GPUParticles2D" parent="Area"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_v3w5s")
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.65
+explosiveness = 1.0

@@ -1,0 +1,171 @@
+[gd_resource type="Resource" script_class="AtlasTextureArray" load_steps=43 format=3 uid="uid://bbf517kbmdb2r"]
+
+[ext_resource type="Script" path="res://Resources/skin_data.gd" id="1_evnue"]
+[ext_resource type="Resource" uid="uid://b5pfkeundejkl" path="res://Resources/default_skin.tres" id="2_15e1g"]
+[ext_resource type="Texture2D" uid="uid://4euk6b1ld7j4" path="res://Sprites/Realistic_Face.png" id="2_k6e2m"]
+[ext_resource type="Script" path="res://Resources/skin_data_array.gd" id="3_xq7h5"]
+[ext_resource type="Texture2D" uid="uid://d3mn7knjcuqlj" path="res://Sprites/Gore_Face.png" id="4_ub7fa"]
+[ext_resource type="Texture2D" uid="uid://dg8ip4rf5cjsy" path="res://Sprites/Pixel_Face.png" id="5_h2uxp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3siw4"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(137, 69, 273, 415)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an2on"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(1151, 513, 265, 438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfmol"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(857, 523, 260, 414)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eofk"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(518, 526, 274, 410)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egwrb"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(137, 522, 267, 413)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t37po"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(1158, 72, 273, 417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7sia"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(1158, 72, 273, 417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgb4o"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(857, 72, 270, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5a0x"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(529, 73, 277, 410)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26q2w"]
+atlas = ExtResource("2_k6e2m")
+region = Rect2(137, 69, 273, 415)
+
+[sub_resource type="Resource" id="Resource_e0gmt"]
+script = ExtResource("1_evnue")
+name = "Jaime"
+icon = SubResource("AtlasTexture_3siw4")
+textures = Array[Texture2D]([SubResource("AtlasTexture_an2on"), SubResource("AtlasTexture_nfmol"), SubResource("AtlasTexture_3eofk"), SubResource("AtlasTexture_egwrb"), SubResource("AtlasTexture_t37po"), SubResource("AtlasTexture_r7sia"), SubResource("AtlasTexture_pgb4o"), SubResource("AtlasTexture_e5a0x"), SubResource("AtlasTexture_26q2w")])
+price = 20
+bought = false
+damage = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxqof"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(245, 52, 284, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rq5k"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(994, 685, 282, 305)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16jkw"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(642, 680, 282, 311)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68r07"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(257, 681, 285, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uklhr"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(1000, 372, 282, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7p4n"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(638, 368, 289, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnf44"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(253, 372, 283, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baljs"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(999, 56, 279, 299)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjj88"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(633, 50, 284, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2nei"]
+atlas = ExtResource("4_ub7fa")
+region = Rect2(245, 52, 284, 312)
+
+[sub_resource type="Resource" id="Resource_bd8uv"]
+script = ExtResource("1_evnue")
+name = "Sigma Phonk"
+icon = SubResource("AtlasTexture_dxqof")
+textures = Array[Texture2D]([SubResource("AtlasTexture_8rq5k"), SubResource("AtlasTexture_16jkw"), SubResource("AtlasTexture_68r07"), SubResource("AtlasTexture_uklhr"), SubResource("AtlasTexture_c7p4n"), SubResource("AtlasTexture_gnf44"), SubResource("AtlasTexture_baljs"), SubResource("AtlasTexture_vjj88"), SubResource("AtlasTexture_c2nei")])
+price = 30
+bought = false
+damage = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyita"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(68, 20, 321, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlmf4"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(1090, 678, 314, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l23wu"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(756, 678, 310, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0x8i"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(426, 678, 298, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15hnj"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(89, 678, 300, 287)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u4gw"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(1086, 349, 308, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqdv"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(756, 349, 309, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm5r2"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(421, 349, 301, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hk0p"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(88, 349, 301, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jyka"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(1086, 20, 308, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6vkt"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(740, 20, 325, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5oqe"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(410, 20, 302, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yx1k"]
+atlas = ExtResource("5_h2uxp")
+region = Rect2(68, 20, 321, 286)
+
+[sub_resource type="Resource" id="Resource_gi1xm"]
+script = ExtResource("1_evnue")
+name = "Atari"
+icon = SubResource("AtlasTexture_qyita")
+textures = Array[Texture2D]([SubResource("AtlasTexture_mlmf4"), SubResource("AtlasTexture_l23wu"), SubResource("AtlasTexture_c0x8i"), SubResource("AtlasTexture_15hnj"), SubResource("AtlasTexture_0u4gw"), SubResource("AtlasTexture_oqqdv"), SubResource("AtlasTexture_jm5r2"), SubResource("AtlasTexture_1hk0p"), SubResource("AtlasTexture_3jyka"), SubResource("AtlasTexture_u6vkt"), SubResource("AtlasTexture_x5oqe"), SubResource("AtlasTexture_4yx1k")])
+price = 1
+bought = false
+damage = 1
+
+[resource]
+script = ExtResource("3_xq7h5")
+_array = Array[ExtResource("1_evnue")]([ExtResource("2_15e1g"), SubResource("Resource_e0gmt"), SubResource("Resource_bd8uv"), SubResource("Resource_gi1xm")])

@@ -1,0 +1,422 @@
+[gd_scene load_steps=32 format=3 uid="uid://cc4rtm4fjryjs"]
+
+[ext_resource type="Script" path="res://Scenes/game_scene_handler.gd" id="1_03x42"]
+[ext_resource type="PackedScene" uid="uid://ddmmdmqv7vbng" path="res://Prefabs/face.tscn" id="1_j6167"]
+[ext_resource type="Texture2D" uid="uid://bvcmn5ieytls3" path="res://icon.svg" id="2_2nare"]
+[ext_resource type="Material" uid="uid://cqc2u14l8xt10" path="res://Materials/background_mat.tres" id="2_2qu8r"]
+[ext_resource type="PackedScene" uid="uid://dm2brtabpmhp7" path="res://Prefabs/bad_guy.tscn" id="2_t0f1y"]
+[ext_resource type="Script" path="res://Scripts/Enemy_Spawner.gd" id="3_8c3w5"]
+[ext_resource type="Script" path="res://Scripts/score_display.gd" id="7_106d5"]
+[ext_resource type="Shader" path="res://Shaders/flag_shader.gdshader" id="7_jxc6g"]
+[ext_resource type="Shader" path="res://Shaders/wobbly_line.gdshader" id="7_qk3ra"]
+[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="8_bv37v"]
+[ext_resource type="Texture2D" uid="uid://dtxn8nmokj4va" path="res://Sprites/skull.png" id="8_jt2mv"]
+[ext_resource type="Script" path="res://Scripts/sound_player_on_ready.gd" id="12_v43j8"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="13_75q3b"]
+[ext_resource type="Script" path="res://Scripts/win_menu.gd" id="14_e64c6"]
+[ext_resource type="Texture2D" uid="uid://cenbn8ntgelxv" path="res://Sprites/Ad_Icon.png" id="15_xnpff"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpwe3"]
+font_size = 45
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qt0nc"]
+shader = ExtResource("7_jxc6g")
+shader_parameter/speed = 2.0
+shader_parameter/frequency_y = 3.0
+shader_parameter/frequency_x = 3.0
+shader_parameter/amplitude_y = 3.0
+shader_parameter/amplitude_x = 3.0
+shader_parameter/inclination = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gibc"]
+font_size = 40
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8hnf0"]
+shader = ExtResource("7_qk3ra")
+shader_parameter/shaking = true
+shader_parameter/amplitude = 1.0
+shader_parameter/noise_scale = 20.0
+shader_parameter/noise_speed = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iqfp"]
+bg_color = Color(0, 0, 0, 0.741176)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nk2e6"]
+shader = ExtResource("7_jxc6g")
+shader_parameter/speed = 2.0
+shader_parameter/frequency_y = 5.0
+shader_parameter/frequency_x = 5.0
+shader_parameter/amplitude_y = 10.0
+shader_parameter/amplitude_x = 10.0
+shader_parameter/inclination = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_2l47g"]
+font_size = 90
+font_color = Color(1, 0, 0, 1)
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ap2w"]
+shader = ExtResource("7_jxc6g")
+shader_parameter/speed = 2.0
+shader_parameter/frequency_y = 5.0
+shader_parameter/frequency_x = 5.0
+shader_parameter/amplitude_y = 4.0
+shader_parameter/amplitude_x = 4.0
+shader_parameter/inclination = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0aih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y7dlg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wk8cc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwgo8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0a22"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dvn3l"]
+font_size = 90
+font_color = Color(2.31028e-06, 0.600535, 0.691046, 1)
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3i28"]
+bg_color = Color(0.113725, 0.117647, 0.172549, 0.721569)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t845i"]
+font_size = 90
+font_color = Color(0.625563, 0.529957, 0.0640481, 1)
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_03x42")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+material = ExtResource("2_2qu8r")
+position = Vector2(711, 322)
+scale = Vector2(41.8, 49.7083)
+texture = ExtResource("2_2nare")
+region_rect = Rect2(11, 12, 45, 24)
+
+[node name="Face" parent="." instance=ExtResource("1_j6167")]
+position = Vector2(539, 334)
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("3_8c3w5")
+_enemies = Array[PackedScene]([ExtResource("2_t0f1y")])
+_enemies_per_wave = 5
+
+[node name="Main_Theme_Player" type="Node" parent="."]
+script = ExtResource("12_v43j8")
+_song_name = "Main_Theme"
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="GameUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_constants/separation = 845
+
+[node name="Label" type="Label" parent="GameUI/Control/HBoxContainer2"]
+layout_mode = 2
+text = "Level: 1 "
+label_settings = SubResource("LabelSettings_jpwe3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/Control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Score" type="Label" parent="GameUI/Control/HBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_qt0nc")
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4gibc")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_106d5")
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/Control/HBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_8hnf0")
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("8_jt2mv")
+stretch_mode = 3
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="GameOver"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameOver/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iqfp")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameOver/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -290.5
+offset_right = 558.0
+offset_bottom = 290.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 96
+
+[node name="Label" type="Label" parent="GameOver/Control/VBoxContainer2"]
+material = SubResource("ShaderMaterial_nk2e6")
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_2l47g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/Control/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 55
+
+[node name="ChangeSceneButton" type="Button" parent="GameOver/Control/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "RETRY"
+script = ExtResource("8_bv37v")
+
+[node name="ChangeSceneButton2" type="Button" parent="GameOver/Control/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "Main Menu"
+script = ExtResource("8_bv37v")
+scene_name = "main_menu"
+
+[node name="Pause_Menu" type="CanvasLayer" parent="."]
+script = ExtResource("13_75q3b")
+
+[node name="UI" type="Control" parent="Pause_Menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Pause_Menu/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pause_Menu/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -290.5
+offset_right = 558.0
+offset_bottom = 290.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 96
+
+[node name="Label" type="Label" parent="Pause_Menu/UI/VBoxContainer2"]
+material = SubResource("ShaderMaterial_nk2e6")
+layout_mode = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_dvn3l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Menu/UI/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 55
+
+[node name="ChangeSceneButton" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "RESUME"
+
+[node name="ChangeSceneButton2" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "Main Menu"
+script = ExtResource("8_bv37v")
+scene_name = "main_menu"
+
+[node name="Win_Menu" type="CanvasLayer" parent="." node_paths=PackedStringArray("next_level_button", "claim_button", "claim_x2_button")]
+script = ExtResource("14_e64c6")
+next_level_button = NodePath("UI/VBoxContainer2/NextLevel")
+claim_button = NodePath("UI/VBoxContainer2/VBoxContainer/Claim")
+claim_x2_button = NodePath("UI/VBoxContainer2/VBoxContainer/Claimx2")
+
+[node name="UI" type="Control" parent="Win_Menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Win_Menu/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3i28")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Win_Menu/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 126
+
+[node name="Label" type="Label" parent="Win_Menu/UI/VBoxContainer2"]
+material = SubResource("ShaderMaterial_nk2e6")
+layout_mode = 2
+text = "Level Completed!"
+label_settings = SubResource("LabelSettings_t845i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Win_Menu/UI/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Claimx2" type="Button" parent="Win_Menu/UI/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+text = "Claim x2"
+icon = ExtResource("15_xnpff")
+
+[node name="Claim" type="Button" parent="Win_Menu/UI/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+text = "no thanks"
+flat = true
+
+[node name="NextLevel" type="Button" parent="Win_Menu/UI/VBoxContainer2"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "NEXT LEVEL"
+script = ExtResource("8_bv37v")
+
+[connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/ChangeSceneButton" to="Pause_Menu" method="toggle_ui"]

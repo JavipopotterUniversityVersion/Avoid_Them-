@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh6eupjt2by5a"
+path="res://.godot/imported/Harmonica E.wav-8d1cc122dec69865ba0fea4c0fabf480.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Harmonica E.wav"
+dest_files=["res://.godot/imported/Harmonica E.wav-8d1cc122dec69865ba0fea4c0fabf480.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ypjpo0pq6lmd"
+path="res://.godot/imported/Comedy Bang.wav-92fd9f714679906a8e6bd4cb5ac86124.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Comedy/Comedy Bang.wav"
+dest_files=["res://.godot/imported/Comedy Bang.wav-92fd9f714679906a8e6bd4cb5ac86124.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://w3pkpa2gs6fi"
+path="res://.godot/imported/Buttrumpet D.wav-5c8734ed209c8cee49e0ebbfd944a582.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Buttrumpet D.wav"
+dest_files=["res://.godot/imported/Buttrumpet D.wav-5c8734ed209c8cee49e0ebbfd944a582.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

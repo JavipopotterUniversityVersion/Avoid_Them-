@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d00rsodw4s6cb"
+path="res://.godot/imported/Kazoo F.wav-6da403f2e8aac0bd6d913bf7491f567a.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Kazoo F.wav"
+dest_files=["res://.godot/imported/Kazoo F.wav-6da403f2e8aac0bd6d913bf7491f567a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

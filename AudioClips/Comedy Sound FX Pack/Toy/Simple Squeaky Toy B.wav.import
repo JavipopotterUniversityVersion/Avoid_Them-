@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://082ycbbldlp7"
+path="res://.godot/imported/Simple Squeaky Toy B.wav-e764b3008919322863147a9a66e425cf.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Toy/Simple Squeaky Toy B.wav"
+dest_files=["res://.godot/imported/Simple Squeaky Toy B.wav-e764b3008919322863147a9a66e425cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

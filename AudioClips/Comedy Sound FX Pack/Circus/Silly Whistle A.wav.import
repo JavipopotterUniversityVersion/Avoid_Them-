@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ix7u3dtmsu0w"
+path="res://.godot/imported/Silly Whistle A.wav-c1ece301527bb5cff6fe645a84bc6280.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Circus/Silly Whistle A.wav"
+dest_files=["res://.godot/imported/Silly Whistle A.wav-c1ece301527bb5cff6fe645a84bc6280.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

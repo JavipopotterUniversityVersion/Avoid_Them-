@@ -1,0 +1,226 @@
+[gd_scene load_steps=11 format=3 uid="uid://f0ogcydkjm4t"]
+
+[ext_resource type="Material" uid="uid://bml3v2aw5qefg" path="res://Materials/title_mat.tres" id="1_efhmd"]
+[ext_resource type="LabelSettings" uid="uid://04taixelm7ll" path="res://Resources/LabelSettings/Title.tres" id="1_rl023"]
+[ext_resource type="Script" path="res://Scripts/shop_handler.gd" id="3_t6m6b"]
+[ext_resource type="Resource" uid="uid://bbf517kbmdb2r" path="res://Resources/Faces.tres" id="4_76bnv"]
+[ext_resource type="PackedScene" uid="uid://broxk1igealfc" path="res://Prefabs/skin_panel.tscn" id="4_eok6a"]
+[ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="6_8cq1k"]
+[ext_resource type="Script" path="res://Scripts/sound_player_on_ready.gd" id="6_f8kvr"]
+[ext_resource type="Script" path="res://Scripts/money_display.gd" id="7_w31m1"]
+[ext_resource type="Texture2D" uid="uid://3owhoue2rnci" path="res://Sprites/Coin.png" id="8_3rgkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b64mq"]
+font_size = 45
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Shop" type="CanvasLayer"]
+
+[node name="Shop_Handler" type="Control" parent="." node_paths=PackedStringArray("grid_container", "title_label", "skin_texture", "back_panel", "_buy_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_t6m6b")
+grid_container = NodePath("Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer")
+title_label = NodePath("Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/Label")
+skin_texture = NodePath("Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/Back_Panel/Skin_Texture")
+back_panel = NodePath("Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/Back_Panel")
+_skins = ExtResource("4_76bnv")
+_buy_button = NodePath("Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/Buy_Button")
+
+[node name="Background" type="Panel" parent="Shop_Handler"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shop_Label" type="Label" parent="Shop_Handler/Background"]
+material = ExtResource("1_efhmd")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Shop"
+label_settings = ExtResource("1_rl023")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop_Handler/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="Shop_Handler/Background/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop_Handler/Background/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GridContainer" type="GridContainer" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Skin_Panel" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel2" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel3" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel4" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel5" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel6" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel7" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel8" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel9" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel10" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel11" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel12" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel13" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel14" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel15" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel16" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel17" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel18" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel19" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Skin_Panel20" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/GridContainer" instance=ExtResource("4_eok6a")]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_b64mq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back_Panel" type="Panel" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Skin_Texture" type="TextureRect" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer/Back_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buy_Button" type="Button" parent="Shop_Handler/Background/MarginContainer/Panel/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Buy"
+
+[node name="ChangeSceneButton" type="Button" parent="Shop_Handler"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 28.0
+offset_right = 247.0
+offset_bottom = 70.0
+text = "Main Menu"
+script = ExtResource("6_8cq1k")
+scene_name = "main_menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop_Handler"]
+layout_mode = 0
+offset_left = 833.0
+offset_right = 1152.0
+offset_bottom = 70.0
+alignment = 2
+
+[node name="MoneyDisplay" type="Label" parent="Shop_Handler/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("7_w31m1")
+
+[node name="TextureRect" type="TextureRect" parent="Shop_Handler/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture = ExtResource("8_3rgkv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shop_Theme_Player" type="Node" parent="."]
+script = ExtResource("6_f8kvr")
+_song_name = "Shop_Theme"

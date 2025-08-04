@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmnf341ebcnqr"
+path="res://.godot/imported/Bryce Breath A.wav-806793b2478ee09426b4d97300dc2f4f.sample"
+
+[deps]
+
+source_file="res://AudioClips/Bryce/Bryce Breath A.wav"
+dest_files=["res://.godot/imported/Bryce Breath A.wav-806793b2478ee09426b4d97300dc2f4f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

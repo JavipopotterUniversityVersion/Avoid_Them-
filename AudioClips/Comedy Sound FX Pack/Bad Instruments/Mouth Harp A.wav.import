@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://18qggng7dku6"
+path="res://.godot/imported/Mouth Harp A.wav-638843cb2dffddf59fd04b9eb8e5b045.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Mouth Harp A.wav"
+dest_files=["res://.godot/imported/Mouth Harp A.wav-638843cb2dffddf59fd04b9eb8e5b045.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

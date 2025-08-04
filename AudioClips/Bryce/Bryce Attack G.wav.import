@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnqey8tbck8le"
+path="res://.godot/imported/Bryce Attack G.wav-4ba88c4ee88fc2585a1bbd3d064b9c77.sample"
+
+[deps]
+
+source_file="res://AudioClips/Bryce/Bryce Attack G.wav"
+dest_files=["res://.godot/imported/Bryce Attack G.wav-4ba88c4ee88fc2585a1bbd3d064b9c77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

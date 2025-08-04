@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1uns6p530w5x"
+path="res://.godot/imported/Bad Slide Whistle C.wav-1eafce0dbf822bb3e50e0ebcf02ab903.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Comedy/Bad Slide Whistle C.wav"
+dest_files=["res://.godot/imported/Bad Slide Whistle C.wav-1eafce0dbf822bb3e50e0ebcf02ab903.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

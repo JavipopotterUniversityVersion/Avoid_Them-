@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://huriqhvc3ovp"
+path="res://.godot/imported/Chiptune Vol4 Jumbo Intensity 2.wav-551bcd1fa843b087778664874f2059a8.sample"
+
+[deps]
+
+source_file="res://AudioClips/Chiptune/Jumbo (RT 3.582)/Chiptune Vol4 Jumbo Intensity 2.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Jumbo Intensity 2.wav-551bcd1fa843b087778664874f2059a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

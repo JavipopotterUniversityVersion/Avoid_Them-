@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg7eghsmx2iii"
+path="res://.godot/imported/Bryce Effort E.wav-1ebc1e5b1f5ff433badfd23dd0546492.sample"
+
+[deps]
+
+source_file="res://AudioClips/Bryce/Bryce Effort E.wav"
+dest_files=["res://.godot/imported/Bryce Effort E.wav-1ebc1e5b1f5ff433badfd23dd0546492.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

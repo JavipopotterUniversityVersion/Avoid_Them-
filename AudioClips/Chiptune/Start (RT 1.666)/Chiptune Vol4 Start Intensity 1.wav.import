@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7aiv058yu7te"
+path="res://.godot/imported/Chiptune Vol4 Start Intensity 1.wav-17e96a8b011eacd9c7dd6c8f4b10eb8d.sample"
+
+[deps]
+
+source_file="res://AudioClips/Chiptune/Start (RT 1.666)/Chiptune Vol4 Start Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Start Intensity 1.wav-17e96a8b011eacd9c7dd6c8f4b10eb8d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

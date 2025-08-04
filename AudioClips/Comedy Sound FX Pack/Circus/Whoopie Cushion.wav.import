@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bapik3uejrrri"
+path="res://.godot/imported/Whoopie Cushion.wav-d40506c71d18ffc09dfcc6f9b453e4cf.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Circus/Whoopie Cushion.wav"
+dest_files=["res://.godot/imported/Whoopie Cushion.wav-d40506c71d18ffc09dfcc6f9b453e4cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

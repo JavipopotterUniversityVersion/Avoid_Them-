@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cqc2u14l8xt10"]
+
+[ext_resource type="Shader" path="res://Shaders/AAA.gdshader" id="1_hy3fg"]
+
+[resource]
+shader = ExtResource("1_hy3fg")
+shader_parameter/colour1 = Color(1, 1, 1, 1)
+shader_parameter/colour2 = Color(0, 0, 0, 1)
+shader_parameter/colour3 = Color(0, 0, 0, 1)
+shader_parameter/colour4 = Color(1, 1, 1, 1)
+shader_parameter/contrast = 5
+shader_parameter/gradual = 2.0
+shader_parameter/width1 = 0.04
+shader_parameter/width2 = 0.1
+shader_parameter/scale1 = 10.0
+shader_parameter/scale2 = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/intensity = 0.2
+shader_parameter/spin_speed = 0.7
+shader_parameter/spin_amount = 1.5

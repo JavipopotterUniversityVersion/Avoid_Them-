@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7bq7hbw17mn4"
+path="res://.godot/imported/Retro Glass Destruction B.wav-3f741c62c3c12db45a727289d373de1e.sample"
+
+[deps]
+
+source_file="res://AudioClips/Retro/Retro Glass Destruction B.wav"
+dest_files=["res://.godot/imported/Retro Glass Destruction B.wav-3f741c62c3c12db45a727289d373de1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

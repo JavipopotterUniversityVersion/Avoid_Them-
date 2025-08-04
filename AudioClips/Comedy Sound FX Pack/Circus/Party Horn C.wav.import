@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://deoxrxqxjtnxw"
+path="res://.godot/imported/Party Horn C.wav-4d954beafeef9feae63b342e1a84d533.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Circus/Party Horn C.wav"
+dest_files=["res://.godot/imported/Party Horn C.wav-4d954beafeef9feae63b342e1a84d533.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

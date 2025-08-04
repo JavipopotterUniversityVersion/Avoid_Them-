@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y5c42bvr5afs"
+path="res://.godot/imported/Bryce Annoyed C.wav-64f6001230fbd0b4f55bc4de10db3bd8.sample"
+
+[deps]
+
+source_file="res://AudioClips/Bryce/Bryce Annoyed C.wav"
+dest_files=["res://.godot/imported/Bryce Annoyed C.wav-64f6001230fbd0b4f55bc4de10db3bd8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

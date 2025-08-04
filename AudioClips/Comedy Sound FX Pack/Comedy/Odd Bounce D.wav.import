@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b56ey5ltw7hac"
+path="res://.godot/imported/Odd Bounce D.wav-e34cdb7c505d9152f293e8c75a7409de.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Comedy/Odd Bounce D.wav"
+dest_files=["res://.godot/imported/Odd Bounce D.wav-e34cdb7c505d9152f293e8c75a7409de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

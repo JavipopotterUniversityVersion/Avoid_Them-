@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4gvatu3xu431"
+path="res://.godot/imported/Annoyance D.wav-c6cde378e82bbf9416c4699411a855fd.sample"
+
+[deps]
+
+source_file="res://AudioClips/Comedy Sound FX Pack/Misc/Annoyance D.wav"
+dest_files=["res://.godot/imported/Annoyance D.wav-c6cde378e82bbf9416c4699411a855fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

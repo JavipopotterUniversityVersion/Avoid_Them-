@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://broxk1igealfc"]
+
+[ext_resource type="Texture2D" uid="uid://4euk6b1ld7j4" path="res://Sprites/Realistic_Face.png" id="1_5nydj"]
+[ext_resource type="Script" path="res://Resources/skin_data.gd" id="1_g1j11"]
+
+[sub_resource type="Resource" id="Resource_oep8p"]
+script = ExtResource("1_g1j11")
+name = "Umi"
+textures = Array[Texture2D]([])
+price = 10
+bought = false
+damage = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri3sl"]
+atlas = ExtResource("1_5nydj")
+region = Rect2(137, 69, 273, 415)
+
+[node name="Skin_Panel" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+size_flags_horizontal = 4
+metadata/SkinData = SubResource("Resource_oep8p")
+
+[node name="Skin" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ri3sl")
+expand_mode = 1
+stretch_mode = 5

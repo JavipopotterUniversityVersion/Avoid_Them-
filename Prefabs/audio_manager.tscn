@@ -1,0 +1,56 @@
+[gd_scene load_steps=18 format=3 uid="uid://d10hvmqxruh5k"]
+
+[ext_resource type="Script" path="res://Scripts/Audio_Manager.gd" id="1_allnf"]
+[ext_resource type="AudioStream" uid="uid://r8jcaw3kddew" path="res://AudioClips/Bryce/Bryce Pain A.wav" id="2_86whk"]
+[ext_resource type="AudioStream" uid="uid://b3cjwaffn0y7q" path="res://AudioClips/Bryce/Bryce Pain B.wav" id="3_errv2"]
+[ext_resource type="AudioStream" uid="uid://cf4bss8xc78tn" path="res://AudioClips/Bryce/Bryce Pain C.wav" id="4_wuell"]
+[ext_resource type="AudioStream" uid="uid://dpbblg8nr0irx" path="res://AudioClips/Bryce/Bryce Pain D.wav" id="5_i6buq"]
+[ext_resource type="AudioStream" uid="uid://whoy8el05qrp" path="res://AudioClips/Bryce/Bryce Pain E.wav" id="6_lst2r"]
+[ext_resource type="AudioStream" uid="uid://b4s104kgl2iuv" path="res://AudioClips/Bryce/Bryce Pain F.wav" id="7_cdj6t"]
+[ext_resource type="AudioStream" uid="uid://do3ixwwxhdanu" path="res://AudioClips/Bryce/Bryce Pain G.wav" id="8_4wjrq"]
+[ext_resource type="AudioStream" uid="uid://drlqg5kf05xeh" path="res://AudioClips/Bryce/Bryce Pain H.wav" id="9_ufsu7"]
+[ext_resource type="AudioStream" uid="uid://bm5xaq8wmvapy" path="res://AudioClips/Bryce/Bryce Pain I.wav" id="10_hvoqf"]
+[ext_resource type="AudioStream" uid="uid://cs52nxplqsntv" path="res://AudioClips/Retro/Retro Destruction A.wav" id="11_tqwd3"]
+[ext_resource type="AudioStream" uid="uid://coemeotyk50wn" path="res://AudioClips/Retro/Retro Destruction B.wav" id="12_c3u7y"]
+[ext_resource type="AudioStream" uid="uid://def1px1o55e0k" path="res://AudioClips/Chiptune/Scheming (RT 2.427)/Chiptune Vol4 Scheming Main.wav" id="13_uyouw"]
+[ext_resource type="AudioStream" uid="uid://bv6u8q6n7iunn" path="res://AudioClips/Chiptune/Start (RT 1.666)/Chiptune Vol4 Start Main.wav" id="14_cgtax"]
+[ext_resource type="AudioStream" uid="uid://dndqop2qbu7iv" path="res://AudioClips/Chiptune/Jumbo (RT 3.582)/Chiptune Vol4 Jumbo Main.wav" id="15_g1clp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gpvxh"]
+random_pitch = 1.1
+streams_count = 9
+stream_0/stream = ExtResource("2_86whk")
+stream_1/stream = ExtResource("3_errv2")
+stream_2/stream = ExtResource("4_wuell")
+stream_3/stream = ExtResource("5_i6buq")
+stream_4/stream = ExtResource("6_lst2r")
+stream_5/stream = ExtResource("7_cdj6t")
+stream_6/stream = ExtResource("8_4wjrq")
+stream_7/stream = ExtResource("9_ufsu7")
+stream_8/stream = ExtResource("10_hvoqf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mvj1a"]
+random_pitch = 1.1
+streams_count = 2
+stream_0/stream = ExtResource("11_tqwd3")
+stream_1/stream = ExtResource("12_c3u7y")
+
+[node name="AudioManager" type="Node" groups=["scene_manager_entity_nodes"]]
+script = ExtResource("1_allnf")
+metadata/entity_name = "AudioManager"
+
+[node name="Pain" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_gpvxh")
+pitch_scale = 2.0
+
+[node name="Destroy" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_mvj1a")
+
+[node name="Main_Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_uyouw")
+
+[node name="Menu_Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_cgtax")
+
+[node name="Shop_Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_g1clp")

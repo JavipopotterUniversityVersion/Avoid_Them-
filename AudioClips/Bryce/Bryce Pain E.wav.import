@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://whoy8el05qrp"
+path="res://.godot/imported/Bryce Pain E.wav-bbe8b59e72c2b362b0d4cd9bf66520c8.sample"
+
+[deps]
+
+source_file="res://AudioClips/Bryce/Bryce Pain E.wav"
+dest_files=["res://.godot/imported/Bryce Pain E.wav-bbe8b59e72c2b362b0d4cd9bf66520c8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

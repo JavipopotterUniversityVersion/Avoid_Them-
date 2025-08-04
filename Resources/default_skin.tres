@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=15 format=3 uid="uid://b5pfkeundejkl"]
+
+[ext_resource type="Texture2D" uid="uid://rhn2rxadpmlq" path="res://Sprites/Head.png" id="1_0oh8t"]
+[ext_resource type="Script" path="res://Resources/skin_data.gd" id="2_qxb6u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tqmt"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(5, 15, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0lv3"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(115, 295, 92, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm02q"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(8, 294, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck3gb"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(218, 200, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3to26"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(115, 200, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhu0h"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(7, 198, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uev7u"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(214, 110, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3vrm"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(113, 109, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxm4c"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(9, 108, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21nkp"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(211, 17, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppr32"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(108, 16, 92, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snchp"]
+atlas = ExtResource("1_0oh8t")
+region = Rect2(5, 15, 92, 81)
+
+[resource]
+script = ExtResource("2_qxb6u")
+name = "Eduardo"
+icon = SubResource("AtlasTexture_3tqmt")
+textures = Array[Texture2D]([SubResource("AtlasTexture_m0lv3"), SubResource("AtlasTexture_cm02q"), SubResource("AtlasTexture_ck3gb"), SubResource("AtlasTexture_3to26"), SubResource("AtlasTexture_hhu0h"), SubResource("AtlasTexture_uev7u"), SubResource("AtlasTexture_i3vrm"), SubResource("AtlasTexture_nxm4c"), SubResource("AtlasTexture_21nkp"), SubResource("AtlasTexture_ppr32"), SubResource("AtlasTexture_snchp")])
+price = 0
+bought = true
+damage = 1

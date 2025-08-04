@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blakd2th5joui"
+path="res://.godot/imported/Chiptune Vol4 Urgent Intensity 1.wav-b185cc52897563e6b993acc3c84aa1da.sample"
+
+[deps]
+
+source_file="res://AudioClips/Chiptune/Urgent (RT 3.587)/Chiptune Vol4 Urgent Intensity 1.wav"
+dest_files=["res://.godot/imported/Chiptune Vol4 Urgent Intensity 1.wav-b185cc52897563e6b993acc3c84aa1da.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
