@@ -5,6 +5,8 @@ signal on_enemy_kill
 signal on_game_win
 
 signal on_money_changed
+signal on_gain_money
+
 signal on_pause
 signal on_resume
 
@@ -28,11 +30,18 @@ func get_skin_damage():
 	return skin.value.damage
 
 func _ready() -> void:
+	init()
+
+func init():
 	SaveManager.load_data()
 	set_money(SaveManager.data.get_or_add("current_money", 0))
 	_current_level = SaveManager.data.get_or_add("current_level", 1)
 	skin.value = load("res://Resources/default_skin.tres")
 
+func add_money(value:int) -> void:
+	on_gain_money.emit(value)
+	set_money(_current_money + value)
+	
 func set_money(value:int) -> void:
 	_current_money = value
 	on_money_changed.emit(_current_money)
@@ -55,10 +64,11 @@ func game_over():
 	on_game_over.emit()
 
 func get_scored_money(multiplier):
-	set_money(_current_money + _current_score * multiplier)
+	add_money(_current_score * multiplier)
 	_current_score = 0
 
 func start_game(): 
+	resume()
 	_game_over = false
 	on_game_start.emit()
 

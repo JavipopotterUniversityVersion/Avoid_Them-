@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnl2wnqb56ipe"]
+
+[ext_resource type="Script" path="res://Scripts/money_fx.gd" id="1_58vj0"]
+
+[node name="Money_Fx" type="Node2D" node_paths=PackedStringArray("target_point")]
+script = ExtResource("1_58vj0")
+target_point = NodePath("Target_Point")
+distance_range = Vector2(150, 250)
+time_range = Vector2(0.3, 0.6)
+
+[node name="Target_Point" type="Node2D" parent="."]
+position = Vector2(331, -213)

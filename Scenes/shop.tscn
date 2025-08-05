@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f0ogcydkjm4t"]
+[gd_scene load_steps=12 format=3 uid="uid://f0ogcydkjm4t"]
 
 [ext_resource type="Material" uid="uid://bml3v2aw5qefg" path="res://Materials/title_mat.tres" id="1_efhmd"]
 [ext_resource type="LabelSettings" uid="uid://04taixelm7ll" path="res://Resources/LabelSettings/Title.tres" id="1_rl023"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/sound_player_on_ready.gd" id="6_f8kvr"]
 [ext_resource type="Script" path="res://Scripts/money_display.gd" id="7_w31m1"]
 [ext_resource type="Texture2D" uid="uid://3owhoue2rnci" path="res://Sprites/Coin.png" id="8_3rgkv"]
+[ext_resource type="PackedScene" uid="uid://bnl2wnqb56ipe" path="res://Prefabs/money_fx.tscn" id="10_p1c0l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b64mq"]
 font_size = 45
@@ -224,3 +225,12 @@ stretch_mode = 5
 [node name="Shop_Theme_Player" type="Node" parent="."]
 script = ExtResource("6_f8kvr")
 _song_name = "Shop_Theme"
+
+[node name="Money_FX" parent="." instance=ExtResource("10_p1c0l")]
+position = Vector2(1119, 35)
+time_range = Vector2(0.3, 0.6)
+
+[node name="Target_Point" parent="Money_FX" index="0"]
+position = Vector2(-272, 368)
+
+[editable path="Money_FX"]

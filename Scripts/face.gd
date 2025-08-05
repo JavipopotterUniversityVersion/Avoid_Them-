@@ -3,7 +3,10 @@ extends Area2D
 
 @onready var particles:GPUParticles2D = $"Particles"
 @onready var background_shader:ShaderMaterial = preload("res://Materials/background_mat.tres")
-@onready var background_gradients:Array
+@onready var background_gradients:Array[Gradient] = [
+	preload("res://Resources/Gradients/background_gradient.tres"),
+	preload("res://Resources/Gradients/background_gradient_2.tres")
+]
 @onready var sprite:Sprite2D = $Sprite2D
 
 var skin_data:SkinData = preload("res://Resources/player_skin.tres").value
@@ -11,26 +14,17 @@ var _max_health = 9
 var _current_health = 9
 const REFERENCE_SIZE := 92.0
 
-func list_files_in_directory(path):
-	var files = []
-	var dir = DirAccess.open(path)
-	dir.open(path)
-	dir.list_dir_begin()
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with("."):
-			files.append(load(path + "/" + file))
-	return files
+var _original_colours:Array[Color]
 
 func _ready() -> void:
-	background_gradients = list_files_in_directory("res://Resources/Gradients")
 	_max_health = skin_data.textures.size() - 1
 	_current_health = _max_health
 	sprite.texture = skin_data.get_sprite(_current_health)
 	sprite.scale.x = REFERENCE_SIZE / sprite.texture.get_width()
 	sprite.scale.y = sprite.scale.x
+	
+	_original_colours.push_back(background_shader.get_shader_parameter("colour1"))
+	_original_colours.push_back(background_shader.get_shader_parameter("colour4"))
 	
 
 func get_damage():
@@ -48,3 +42,7 @@ func get_damage():
 	if _current_health <= 0:
 		GameManager.game_over()
 	particles.emitting = true
+
+func _exit_tree() -> void:
+	background_shader.set_shader_parameter("colour1", _original_colours[0])
+	background_shader.set_shader_parameter("colour4", _original_colours[1])

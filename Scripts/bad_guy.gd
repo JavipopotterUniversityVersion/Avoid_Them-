@@ -7,7 +7,9 @@ var INITIAL_SPEED:float
 @onready var target:Node2D = get_tree().get_first_node_in_group(&"Face")
 
 const ENEMIES_AMOUNT:int = 2
+
 signal on_disable
+
 var _follow:bool = true
 @export var _skins:Array[Texture2D]
 @export var _skin:Sprite2D
@@ -33,6 +35,7 @@ func on_press():
 	_health -= GameManager.get_skin_damage()
 	direction = (global_position - target.global_position).normalized()
 	speed = INITIAL_SPEED * 10
+	AudioManager.play_sound(&"Hit")
 	if _health <= 0: kill()
 
 func kill():

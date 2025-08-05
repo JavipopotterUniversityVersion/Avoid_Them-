@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d10hvmqxruh5k"]
+[gd_scene load_steps=19 format=3 uid="uid://d10hvmqxruh5k"]
 
 [ext_resource type="Script" path="res://Scripts/Audio_Manager.gd" id="1_allnf"]
 [ext_resource type="AudioStream" uid="uid://r8jcaw3kddew" path="res://AudioClips/Bryce/Bryce Pain A.wav" id="2_86whk"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://def1px1o55e0k" path="res://AudioClips/Chiptune/Scheming (RT 2.427)/Chiptune Vol4 Scheming Main.wav" id="13_uyouw"]
 [ext_resource type="AudioStream" uid="uid://bv6u8q6n7iunn" path="res://AudioClips/Chiptune/Start (RT 1.666)/Chiptune Vol4 Start Main.wav" id="14_cgtax"]
 [ext_resource type="AudioStream" uid="uid://dndqop2qbu7iv" path="res://AudioClips/Chiptune/Jumbo (RT 3.582)/Chiptune Vol4 Jumbo Main.wav" id="15_g1clp"]
+[ext_resource type="AudioStream" uid="uid://80mmfa060xdr" path="res://AudioClips/Comedy Sound FX Pack/Bad Instruments/Harmonica A.wav" id="16_sdhe6"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gpvxh"]
 random_pitch = 1.1
@@ -54,3 +55,6 @@ stream = ExtResource("14_cgtax")
 
 [node name="Shop_Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_g1clp")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_sdhe6")

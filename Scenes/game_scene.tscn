@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc4rtm4fjryjs"]
+[gd_scene load_steps=35 format=3 uid="uid://cc4rtm4fjryjs"]
 
 [ext_resource type="Script" path="res://Scenes/game_scene_handler.gd" id="1_03x42"]
 [ext_resource type="PackedScene" uid="uid://ddmmdmqv7vbng" path="res://Prefabs/face.tscn" id="1_j6167"]
@@ -9,17 +9,20 @@
 [ext_resource type="Script" path="res://Scripts/score_display.gd" id="7_106d5"]
 [ext_resource type="Shader" path="res://Shaders/flag_shader.gdshader" id="7_jxc6g"]
 [ext_resource type="Shader" path="res://Shaders/wobbly_line.gdshader" id="7_qk3ra"]
+[ext_resource type="Script" path="res://Scripts/level_display.gd" id="8_0j7pl"]
 [ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="8_bv37v"]
 [ext_resource type="Texture2D" uid="uid://dtxn8nmokj4va" path="res://Sprites/skull.png" id="8_jt2mv"]
 [ext_resource type="Script" path="res://Scripts/sound_player_on_ready.gd" id="12_v43j8"]
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="13_75q3b"]
 [ext_resource type="Script" path="res://Scripts/win_menu.gd" id="14_e64c6"]
 [ext_resource type="Texture2D" uid="uid://cenbn8ntgelxv" path="res://Sprites/Ad_Icon.png" id="15_xnpff"]
+[ext_resource type="PackedScene" uid="uid://bnl2wnqb56ipe" path="res://Prefabs/money_fx.tscn" id="17_tdkre"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jpwe3"]
-font_size = 45
-outline_size = 30
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ly7un"]
+
+[sub_resource type="Gradient" id="Gradient_tnlan"]
+offsets = PackedFloat32Array(0, 0.192118, 0.389163, 0.704434, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.639336, 1, 0.886168, 1, 0.728267, 0.971891, 7.70092e-07, 1, 0.838158, 0.648143, 1.54018e-06, 1, 1, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qt0nc"]
 shader = ExtResource("7_jxc6g")
@@ -137,12 +140,19 @@ anchor_right = 1.0
 offset_left = 10.0
 offset_bottom = 88.0
 grow_horizontal = 2
-theme_override_constants/separation = 845
+theme_override_constants/separation = 520
 
-[node name="Label" type="Label" parent="GameUI/Control/HBoxContainer2"]
+[node name="Level_Display" type="RichTextLabel" parent="GameUI/Control/HBoxContainer2"]
+material = SubResource("ShaderMaterial_ly7un")
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-text = "Level: 1 "
-label_settings = SubResource("LabelSettings_jpwe3")
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "Level: [color=#ffaa00]1[/color]"
+text_direction = 1
+script = ExtResource("8_0j7pl")
+gradient = SubResource("Gradient_tnlan")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameUI/Control/HBoxContainer2"]
 layout_mode = 2
@@ -419,4 +429,12 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
 text = "NEXT LEVEL"
 script = ExtResource("8_bv37v")
 
+[node name="Money_Fx" parent="." instance=ExtResource("17_tdkre")]
+position = Vector2(588, 315)
+
+[node name="Target_Point" parent="Money_Fx" index="0"]
+position = Vector2(523, -271)
+
 [connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/ChangeSceneButton" to="Pause_Menu" method="toggle_ui"]
+
+[editable path="Money_Fx"]
