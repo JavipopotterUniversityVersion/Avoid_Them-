@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cc4rtm4fjryjs"]
+[gd_scene load_steps=49 format=3 uid="uid://cc4rtm4fjryjs"]
 
 [ext_resource type="Script" path="res://Scenes/game_scene_handler.gd" id="1_03x42"]
 [ext_resource type="PackedScene" uid="uid://ddmmdmqv7vbng" path="res://Prefabs/face.tscn" id="1_j6167"]
@@ -9,20 +9,22 @@
 [ext_resource type="Script" path="res://Scripts/score_display.gd" id="7_106d5"]
 [ext_resource type="Shader" path="res://Shaders/flag_shader.gdshader" id="7_jxc6g"]
 [ext_resource type="Shader" path="res://Shaders/wobbly_line.gdshader" id="7_qk3ra"]
-[ext_resource type="Script" path="res://Scripts/level_display.gd" id="8_0j7pl"]
 [ext_resource type="Script" path="res://Scripts/change_scene_button.gd" id="8_bv37v"]
+[ext_resource type="Texture2D" uid="uid://c854q7cbxf785" path="res://Sprites/Pause.png" id="8_idn1w"]
 [ext_resource type="Texture2D" uid="uid://dtxn8nmokj4va" path="res://Sprites/skull.png" id="8_jt2mv"]
+[ext_resource type="Script" path="res://Scripts/game_ui.gd" id="8_kxqfv"]
 [ext_resource type="Script" path="res://Scripts/sound_player_on_ready.gd" id="12_v43j8"]
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="13_75q3b"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="13_mrcu3"]
 [ext_resource type="Script" path="res://Scripts/win_menu.gd" id="14_e64c6"]
 [ext_resource type="Texture2D" uid="uid://cenbn8ntgelxv" path="res://Sprites/Ad_Icon.png" id="15_xnpff"]
+[ext_resource type="Material" uid="uid://bml3v2aw5qefg" path="res://Materials/title_mat.tres" id="17_ju1y0"]
 [ext_resource type="PackedScene" uid="uid://bnl2wnqb56ipe" path="res://Prefabs/money_fx.tscn" id="17_tdkre"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ly7un"]
-
-[sub_resource type="Gradient" id="Gradient_tnlan"]
-offsets = PackedFloat32Array(0, 0.192118, 0.389163, 0.704434, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.639336, 1, 0.886168, 1, 0.728267, 0.971891, 7.70092e-07, 1, 0.838158, 0.648143, 1.54018e-06, 1, 1, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://04taixelm7ll" path="res://Resources/LabelSettings/Title.tres" id="18_yy6hm"]
+[ext_resource type="Texture2D" uid="uid://c6elo1fxb0rl" path="res://Sprites/Play_Button.png" id="19_byffp"]
+[ext_resource type="Texture2D" uid="uid://dsux0jx6g7lt4" path="res://Sprites/Shop_Icon.png" id="20_uha7y"]
+[ext_resource type="Texture2D" uid="uid://d1qit6mbj127s" path="res://Sprites/settings.png" id="22_e476s"]
+[ext_resource type="Script" path="res://Scripts/reset_data.gd" id="23_u5ej3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qt0nc"]
 shader = ExtResource("7_jxc6g")
@@ -97,6 +99,34 @@ font_color = Color(0.625563, 0.529957, 0.0640481, 1)
 outline_size = 45
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_454q2"]
+bg_color = Color(0, 0, 0, 0.741176)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2c348"]
+shader = ExtResource("7_jxc6g")
+shader_parameter/speed = 2.0
+shader_parameter/frequency_y = 5.0
+shader_parameter/frequency_x = 5.0
+shader_parameter/amplitude_y = 4.0
+shader_parameter/amplitude_x = 4.0
+shader_parameter/inclination = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r056f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uodmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbpkp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e70jx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ce1a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wiwmo"]
+font_size = 90
+font_color = Color(0.650128, 0.650128, 0.650128, 1)
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_03x42")
 
@@ -121,6 +151,7 @@ script = ExtResource("12_v43j8")
 _song_name = "Main_Theme"
 
 [node name="GameUI" type="CanvasLayer" parent="."]
+script = ExtResource("8_kxqfv")
 
 [node name="Control" type="Control" parent="GameUI"]
 layout_mode = 3
@@ -140,19 +171,12 @@ anchor_right = 1.0
 offset_left = 10.0
 offset_bottom = 88.0
 grow_horizontal = 2
-theme_override_constants/separation = 520
+theme_override_constants/separation = 920
 
-[node name="Level_Display" type="RichTextLabel" parent="GameUI/Control/HBoxContainer2"]
-material = SubResource("ShaderMaterial_ly7un")
-custom_minimum_size = Vector2(500, 0)
+[node name="Pause_Button" type="Button" parent="GameUI/Control/HBoxContainer2"]
 layout_mode = 2
-theme_override_constants/outline_size = 25
-theme_override_font_sizes/normal_font_size = 61
-bbcode_enabled = true
-text = "Level: [color=#ffaa00]1[/color]"
-text_direction = 1
-script = ExtResource("8_0j7pl")
-gradient = SubResource("Gradient_tnlan")
+icon = ExtResource("8_idn1w")
+flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameUI/Control/HBoxContainer2"]
 layout_mode = 2
@@ -178,8 +202,9 @@ texture = ExtResource("8_jt2mv")
 stretch_mode = 3
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+script = ExtResource("13_mrcu3")
 
-[node name="Control" type="Control" parent="GameOver"]
+[node name="UI" type="Control" parent="GameOver"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,7 +212,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="GameOver/Control"]
+[node name="Panel" type="Panel" parent="GameOver/UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,7 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iqfp")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="GameOver/Control"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="GameOver/UI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -209,9 +234,9 @@ offset_right = 558.0
 offset_bottom = 290.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 96
+theme_override_constants/separation = 301
 
-[node name="Label" type="Label" parent="GameOver/Control/VBoxContainer2"]
+[node name="Label" type="Label" parent="GameOver/UI/VBoxContainer2"]
 material = SubResource("ShaderMaterial_nk2e6")
 layout_mode = 2
 text = "GAME OVER"
@@ -219,11 +244,11 @@ label_settings = SubResource("LabelSettings_2l47g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/Control/VBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/UI/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 55
 
-[node name="ChangeSceneButton" type="Button" parent="GameOver/Control/VBoxContainer2/VBoxContainer"]
+[node name="Retry" type="Button" parent="GameOver/UI/VBoxContainer2/VBoxContainer"]
 material = SubResource("ShaderMaterial_3ap2w")
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
@@ -240,7 +265,8 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
 text = "RETRY"
 script = ExtResource("8_bv37v")
 
-[node name="ChangeSceneButton2" type="Button" parent="GameOver/Control/VBoxContainer2/VBoxContainer"]
+[node name="ChangeSceneButton2" type="Button" parent="GameOver/UI/VBoxContainer2/VBoxContainer"]
+visible = false
 material = SubResource("ShaderMaterial_3ap2w")
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
@@ -304,7 +330,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 55
 
-[node name="ChangeSceneButton" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
+[node name="Resume" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
 material = SubResource("ShaderMaterial_3ap2w")
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
@@ -320,7 +346,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
 text = "RESUME"
 
-[node name="ChangeSceneButton2" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
+[node name="Restart" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
 material = SubResource("ShaderMaterial_3ap2w")
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
@@ -334,9 +360,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
-text = "Main Menu"
+text = "Restart"
 script = ExtResource("8_bv37v")
-scene_name = "main_menu"
 
 [node name="Win_Menu" type="CanvasLayer" parent="." node_paths=PackedStringArray("next_level_button", "claim_button", "claim_x2_button")]
 script = ExtResource("14_e64c6")
@@ -429,12 +454,200 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
 text = "NEXT LEVEL"
 script = ExtResource("8_bv37v")
 
+[node name="Menu_UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Menu_UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Menu_UI/Control"]
+self_modulate = Color(1, 1, 1, 0.305882)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_454q2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Menu_UI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -558.0
+offset_top = -290.5
+offset_right = 558.0
+offset_bottom = 290.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 401
+
+[node name="Label" type="Label" parent="Menu_UI/Control/VBoxContainer2"]
+material = ExtResource("17_ju1y0")
+layout_mode = 2
+text = "Avoid Them!"
+label_settings = ExtResource("18_yy6hm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_UI/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="Play" type="Button" parent="Menu_UI/Control/VBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_2c348")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_constants/h_separation = 15
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r056f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uodmh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jbpkp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e70jx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ce1a")
+text = "Play"
+icon = ExtResource("19_byffp")
+flat = true
+
+[node name="Shop" type="Button" parent="Menu_UI/Control/VBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_2c348")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_constants/h_separation = 15
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r056f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uodmh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jbpkp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e70jx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ce1a")
+text = "Shop"
+icon = ExtResource("20_uha7y")
+flat = true
+script = ExtResource("8_bv37v")
+scene_name = "shop"
+
+[node name="Settings" type="Button" parent="Menu_UI/Control/VBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_2c348")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_constants/h_separation = 15
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r056f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uodmh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jbpkp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e70jx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ce1a")
+text = "Settings"
+icon = ExtResource("22_e476s")
+flat = true
+
+[node name="Settings_Menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="UI" type="Control" parent="Settings_Menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Settings_Menu/UI"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -283.0
+offset_right = -44.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f3i28")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Settings_Menu/UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 126
+
+[node name="Label" type="Label" parent="Settings_Menu/UI/Panel/VBoxContainer2"]
+material = SubResource("ShaderMaterial_nk2e6")
+layout_mode = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_wiwmo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reset_Data" type="Button" parent="Settings_Menu/UI/Panel/VBoxContainer2"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.498039, 0, 0.113725, 1)
+theme_override_colors/font_pressed_color = Color(0.345256, 0.0328687, 0.234751, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "Reset Data"
+script = ExtResource("23_u5ej3")
+
+[node name="Return" type="Button" parent="Settings_Menu/UI/Panel/VBoxContainer2"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "Return"
+
 [node name="Money_Fx" parent="." instance=ExtResource("17_tdkre")]
 position = Vector2(588, 315)
 
 [node name="Target_Point" parent="Money_Fx" index="0"]
 position = Vector2(523, -271)
 
-[connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/ChangeSceneButton" to="Pause_Menu" method="toggle_ui"]
+[connection signal="button_down" from="GameUI/Control/HBoxContainer2/Pause_Button" to="Pause_Menu" method="toggle_ui"]
+[connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/Resume" to="Pause_Menu" method="toggle_ui"]
+[connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Play" to="." method="start_game"]
+[connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Play" to="Menu_UI" method="hide"]
+[connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Settings" to="Settings_Menu" method="show"]
+[connection signal="button_down" from="Settings_Menu/UI/Panel/VBoxContainer2/Return" to="Settings_Menu" method="hide"]
 
 [editable path="Money_Fx"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://reqwqvh5qt36"]
+
+[ext_resource type="Script" path="res://Scripts/level_display.gd" id="1_codc7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ly7un"]
+
+[sub_resource type="Gradient" id="Gradient_tnlan"]
+offsets = PackedFloat32Array(0, 0.192118, 0.389163, 0.704434, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.639336, 1, 0.886168, 1, 0.728267, 0.971891, 7.70092e-07, 1, 0.838158, 0.648143, 1.54018e-06, 1, 1, 0, 0, 1)
+
+[node name="Level_Display" type="RichTextLabel"]
+material = SubResource("ShaderMaterial_ly7un")
+custom_minimum_size = Vector2(500, 0)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "Level: [color=#ffaa00]1[/color]"
+text_direction = 1
+script = ExtResource("1_codc7")
+gradient = SubResource("Gradient_tnlan")

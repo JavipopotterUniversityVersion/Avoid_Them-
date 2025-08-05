@@ -16,4 +16,12 @@ func get_sprite(index:int):
 func try_buy() -> bool:
 	if GameManager.try_buy(price):
 		bought = true
+		save_skin()
 	return bought
+
+func save_skin():
+	SaveManager.data.get_or_add(name, {"bought":bought}).bought = bought
+
+func load_skin():
+	var data = SaveManager.data.get_or_add(name, {"bought":false})
+	bought = data.bought

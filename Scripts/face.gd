@@ -9,7 +9,7 @@ extends Area2D
 ]
 @onready var sprite:Sprite2D = $Sprite2D
 
-var skin_data:SkinData = preload("res://Resources/player_skin.tres").value
+var skin_data:SkinData
 var _max_health = 9
 var _current_health = 9
 const REFERENCE_SIZE := 92.0
@@ -17,6 +17,7 @@ const REFERENCE_SIZE := 92.0
 var _original_colours:Array[Color]
 
 func _ready() -> void:
+	skin_data = load("res://Resources/player_skin.tres").value
 	_max_health = skin_data.textures.size() - 1
 	_current_health = _max_health
 	sprite.texture = skin_data.get_sprite(_current_health)

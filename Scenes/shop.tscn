@@ -197,9 +197,9 @@ offset_left = 25.0
 offset_top = 28.0
 offset_right = 247.0
 offset_bottom = 70.0
-text = "Main Menu"
+text = "Return
+"
 script = ExtResource("6_8cq1k")
-scene_name = "main_menu"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Shop_Handler"]
 layout_mode = 0
@@ -228,7 +228,6 @@ _song_name = "Shop_Theme"
 
 [node name="Money_FX" parent="." instance=ExtResource("10_p1c0l")]
 position = Vector2(1119, 35)
-time_range = Vector2(0.3, 0.6)
 
 [node name="Target_Point" parent="Money_FX" index="0"]
 position = Vector2(-272, 368)

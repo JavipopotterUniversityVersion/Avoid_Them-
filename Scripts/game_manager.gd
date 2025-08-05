@@ -21,7 +21,12 @@ var _current_level:int = 1
 func get_current_level() -> int: return _current_level
 
 @onready var skin:SkinDataReference = preload("res://Resources/player_skin.tres")
-func set_skin(new_value:SkinData): skin.value = new_value
+@onready var faces:AtlasTextureArray = preload("res://Resources/Faces.tres")
+
+func set_skin(new_value:SkinData):
+	SaveManager.data.skin_index = faces._array.find(new_value)
+	SaveManager.save_data()
+	skin.value = new_value
 func get_skin(): return skin.value
 
 var _game_over:bool = false
@@ -36,7 +41,8 @@ func init():
 	SaveManager.load_data()
 	set_money(SaveManager.data.get_or_add("current_money", 0))
 	_current_level = SaveManager.data.get_or_add("current_level", 1)
-	skin.value = load("res://Resources/default_skin.tres")
+	var skin_index = SaveManager.data.get_or_add("skin_index", 0)
+	skin.value = load("res://Resources/Faces.tres")._array[skin_index]
 
 func add_money(value:int) -> void:
 	on_gain_money.emit(value)

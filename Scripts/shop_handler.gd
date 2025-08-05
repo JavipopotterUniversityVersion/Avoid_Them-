@@ -13,6 +13,7 @@ var _selected_button_skin:TextureRect
 var _selected_skin:SkinData
 
 func _ready() -> void:
+	_skins.load_skins()
 	for button:Button in grid_container.get_children():
 		if button.get_index() >= _skins._array.size(): 
 			button.visible = false
