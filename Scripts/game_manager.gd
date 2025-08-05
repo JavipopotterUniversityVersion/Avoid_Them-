@@ -75,6 +75,7 @@ func get_scored_money(multiplier):
 
 func start_game(): 
 	resume()
+	AudioManager.play_song("Main_Theme")
 	_game_over = false
 	on_game_start.emit()
 

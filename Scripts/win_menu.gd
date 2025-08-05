@@ -5,7 +5,7 @@ extends CanvasLayer
 var x2_claimed:bool = false
 
 func _ready() -> void:
-	$UI.visible = false
+	hide()
 	GameManager.on_game_win.connect(on_win)
 	claim_button.button_down.connect(func():
 		GameManager.get_scored_money(1)
@@ -17,7 +17,7 @@ func _ready() -> void:
 		allow_next_level())
 
 func on_win():
-	$UI.visible = true
+	show()
 	claim_button.visible = false
 	next_level_button.visible = false
 	await get_tree().create_timer(3).timeout

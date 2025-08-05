@@ -23,5 +23,5 @@ func save_skin():
 	SaveManager.data.get_or_add(name, {"bought":bought}).bought = bought
 
 func load_skin():
-	var data = SaveManager.data.get_or_add(name, {"bought":false})
+	var data = SaveManager.data.get_or_add(name, {"bought":bought})
 	bought = data.bought

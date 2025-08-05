@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cc4rtm4fjryjs"]
+[gd_scene load_steps=50 format=3 uid="uid://cc4rtm4fjryjs"]
 
 [ext_resource type="Script" path="res://Scenes/game_scene_handler.gd" id="1_03x42"]
 [ext_resource type="PackedScene" uid="uid://ddmmdmqv7vbng" path="res://Prefabs/face.tscn" id="1_j6167"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dsux0jx6g7lt4" path="res://Sprites/Shop_Icon.png" id="20_uha7y"]
 [ext_resource type="Texture2D" uid="uid://d1qit6mbj127s" path="res://Sprites/settings.png" id="22_e476s"]
 [ext_resource type="Script" path="res://Scripts/reset_data.gd" id="23_u5ej3"]
+[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="24_dsprw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qt0nc"]
 shader = ExtResource("7_jxc6g")
@@ -91,7 +92,8 @@ outline_size = 45
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3i28"]
-bg_color = Color(0.113725, 0.117647, 0.172549, 0.721569)
+bg_color = Color(0, 0, 0, 0.85098)
+border_blend = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_t845i"]
 font_size = 90
@@ -146,11 +148,12 @@ script = ExtResource("3_8c3w5")
 _enemies = Array[PackedScene]([ExtResource("2_t0f1y")])
 _enemies_per_wave = 5
 
-[node name="Main_Theme_Player" type="Node" parent="."]
+[node name="Menu_Theme_Player" type="Node" parent="."]
 script = ExtResource("12_v43j8")
-_song_name = "Main_Theme"
+_song_name = "Menu_Theme"
 
 [node name="GameUI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("8_kxqfv")
 
 [node name="Control" type="Control" parent="GameUI"]
@@ -202,6 +205,7 @@ texture = ExtResource("8_jt2mv")
 stretch_mode = 3
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("13_mrcu3")
 
 [node name="UI" type="Control" parent="GameOver"]
@@ -285,6 +289,7 @@ script = ExtResource("8_bv37v")
 scene_name = "main_menu"
 
 [node name="Pause_Menu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("13_75q3b")
 
 [node name="UI" type="Control" parent="Pause_Menu"]
@@ -344,7 +349,23 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
-text = "RESUME"
+text = "Resume"
+
+[node name="Settings" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_3ap2w")
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_pressed_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i0aih")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_y7dlg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wk8cc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwgo8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0a22")
+text = "Settings"
 
 [node name="Restart" type="Button" parent="Pause_Menu/UI/VBoxContainer2/VBoxContainer"]
 material = SubResource("ShaderMaterial_3ap2w")
@@ -364,6 +385,7 @@ text = "Restart"
 script = ExtResource("8_bv37v")
 
 [node name="Win_Menu" type="CanvasLayer" parent="." node_paths=PackedStringArray("next_level_button", "claim_button", "claim_x2_button")]
+visible = false
 script = ExtResource("14_e64c6")
 next_level_button = NodePath("UI/VBoxContainer2/NextLevel")
 claim_button = NodePath("UI/VBoxContainer2/VBoxContainer/Claim")
@@ -564,6 +586,7 @@ flat = true
 
 [node name="Settings_Menu" type="CanvasLayer" parent="."]
 visible = false
+script = ExtResource("24_dsprw")
 
 [node name="UI" type="Control" parent="Settings_Menu"]
 layout_mode = 3
@@ -645,9 +668,10 @@ position = Vector2(523, -271)
 
 [connection signal="button_down" from="GameUI/Control/HBoxContainer2/Pause_Button" to="Pause_Menu" method="toggle_ui"]
 [connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/Resume" to="Pause_Menu" method="toggle_ui"]
+[connection signal="button_down" from="Pause_Menu/UI/VBoxContainer2/VBoxContainer/Settings" to="Settings_Menu" method="toggle"]
 [connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Play" to="." method="start_game"]
 [connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Play" to="Menu_UI" method="hide"]
-[connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Settings" to="Settings_Menu" method="show"]
-[connection signal="button_down" from="Settings_Menu/UI/Panel/VBoxContainer2/Return" to="Settings_Menu" method="hide"]
+[connection signal="button_down" from="Menu_UI/Control/VBoxContainer2/HBoxContainer/Settings" to="Settings_Menu" method="toggle"]
+[connection signal="button_down" from="Settings_Menu/UI/Panel/VBoxContainer2/Return" to="Settings_Menu" method="toggle"]
 
 [editable path="Money_Fx"]

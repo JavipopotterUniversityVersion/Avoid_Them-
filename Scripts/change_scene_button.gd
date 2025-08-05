@@ -11,4 +11,4 @@ func change_scene():
 		return
 		
 	var path:String = "res://Scenes/" + scene_name + ".tscn"
-	SceneManager.change_scene(path)
+	SceneManager.change_scene(path, { "pattern": "scribbles", "pattern_leave": "squares" })
